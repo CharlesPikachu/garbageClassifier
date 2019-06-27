@@ -79,7 +79,7 @@ def test(model, dataloader):
 		preds = model(imgs)
 		n_correct += (preds.max(-1)[1].long() == labels.long()).sum().item()
 		n_total += imgs.size(0)
-	acc = n_correct / n_total
+	acc = (n_correct / n_total) * 100
 	model.train()
 	return acc
 
