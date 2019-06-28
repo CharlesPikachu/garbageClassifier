@@ -17,3 +17,21 @@ def Logging(message, savefile=None):
 		f.write(content + '\n')
 		f.close()
 	print(content)
+
+
+'''save classes'''
+def saveClasses(classes, filename='classes.data'):
+	with open(filename, 'w') as f:
+		for c in classes:
+			f.write(c + '\n')
+	return True
+
+
+'''load classes'''
+def loadClasses(filename='classes.data'):
+	classes = []
+	with open(filename, 'r') as f:
+		for line in f.readlines():
+			if line.strip('\n'):
+				classes.append(line.strip('\n'))
+	return classes

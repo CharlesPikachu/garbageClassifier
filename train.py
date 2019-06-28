@@ -32,6 +32,7 @@ def train(config):
 	model.train()
 	# dataset
 	dataset_train = ImageFolder(data_dir=config.traindata_dir, image_size=config.image_size, is_train=True)
+	saveClasses(dataset_train.classes, config.clsnamespath)
 	dataset_test = ImageFolder(data_dir=config.testdata_dir, image_size=config.image_size, is_train=False)
 	dataloader_train = torch.utils.data.DataLoader(dataset_train, batch_size=config.batch_size, shuffle=False, num_workers=config.num_workers)
 	dataloader_test = torch.utils.data.DataLoader(dataset_test, batch_size=config.batch_size, shuffle=False, num_workers=config.num_workers)
