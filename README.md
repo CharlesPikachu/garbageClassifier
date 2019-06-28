@@ -30,11 +30,12 @@ run "unzip GarbageData.zip"
 ```sh
 Modify the config.py according to your needs.
 Explanations and defaut values of the hyperparameters:
-	net_name = 'resnet34' # support 'alexnet', 'vgg11', 'vgg11_bn', 'vgg13', 'vgg13_bn', 'vgg16', 'vgg16_bn', 'vgg19', 'vgg19_bn', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'inception_v3'
+	'''train and test'''
+	net_name = 'resnet50' # support 'alexnet', 'vgg11', 'vgg11_bn', 'vgg13', 'vgg13_bn', 'vgg16', 'vgg16_bn', 'vgg19', 'vgg19_bn', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'inception_v3'
 	num_classes = 6 # num of classes
 	traindata_dir = os.path.join(os.getcwd(), 'GarbageData/train') # the images dir for train
 	testdata_dir = os.path.join(os.getcwd(), 'GarbageData/test') # the images dir for test
-	learning_rate = 1e-3 # learning rate for adam
+	learning_rate = 2e-4 # learning rate for adam
 	load_pretrained = True # whether load the pretrained weights from https://download.pytorch.org/models/
 	num_epochs = 200 # number of epochs while training
 	batch_size = 32 # batch_size
@@ -45,6 +46,10 @@ Explanations and defaut values of the hyperparameters:
 	gpus = '0,1' # gpu ids used
 	ngpus = 2 # number of gpu used
 	num_workers = 4 # number of worker used
+	clsnamespath = 'classes.data' # save the class names
+	'''for demo'''
+	weightspath = 'model_saved/epoch_200.pkl' # model weight used
+	conf_thresh = 0.5 # conf thresh
 ```
 #### Step4
 ```sh
@@ -52,13 +57,16 @@ run "python train.py"
 ```
 
 # Demo
-prepare
+```sh
+Modify the config.py according to your needs.
+run "python demo.py -i image_path"
+```
 
 # Results
 #### train
-prepare
+![img](./results/losscurve.jpg)
 #### test
-prepare
+![giphy](./results/running.gif)
 
 # More
 #### WeChat Official Accounts

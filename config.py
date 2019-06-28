@@ -29,6 +29,5 @@ clsnamespath = 'classes.data' # save the class names
 
 
 '''for demo'''
-camera_id = 0 # camera id used
 weightspath = 'model_saved/epoch_200.pkl' # model weight used
 conf_thresh = 0.5 # conf thresh
