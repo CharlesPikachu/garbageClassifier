@@ -5,7 +5,7 @@ You can star this repository to keep track of the project if it's helpful for yo
 ```
 
 # Introduction in Chinese
-prepare
+https://mp.weixin.qq.com/s/n6eKeuhmg6YFgQLVvm3LDg
 
 # Environment
 - Ubuntu 16.04(train) / Windows10(test)
@@ -13,6 +13,8 @@ prepare
 	- pytorch==0.4.1
 	- torchvision==0.2.2
 	- pillow
+	- argparse
+	- matplotlib
 - Graphics: Tian XP(train) / 1050Ti(test)
 
 # Train
